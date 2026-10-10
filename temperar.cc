@@ -2255,6 +2255,8 @@ local Library = {
         
             Library.KeyList = KeybindList
             Self.KeybindList = KeybindList
+
+            Items["KeybindList"].Instance.Visible = false
         
             function KeybindList:SetVisibility(Bool)
                 Items["KeybindList"].Instance.Visible = Bool
@@ -2281,11 +2283,6 @@ local Library = {
         
                 local TargetHeight = Count > 0 and math.max(25, Y + 5) or 25
         
-                Items["Content"].Instance.Size = UDim2.new(0, Width, 0, TargetHeight)
-        
-                Items["Inline"]:Tween({Size = UDim2.new(0, Width + 14, 0, TargetHeight)}, KeybindTweenInfo)
-                Items["KeybindList"]:Tween({Size = UDim2.new(0, Width + 34, 0, TargetHeight + 28)}, KeybindTweenInfo)
-
                 local ActiveKeys = { }
 
                 for Index, Value in KeybindList.Keys do
@@ -2293,10 +2290,13 @@ local Library = {
                         table.insert(ActiveKeys, Value.Object.Instance.Text)
                     end
                 end
-        
-                if #ActiveKeys == 0 then 
+
+                if #ActiveKeys == 0 then
                     Items["KeybindList"].Instance.Visible = false
                 else
+                    Items["Content"].Instance.Size = UDim2.new(0, Width, 0, TargetHeight)
+                    Items["Inline"]:Tween({Size = UDim2.new(0, Width + 14, 0, TargetHeight)}, KeybindTweenInfo)
+                    Items["KeybindList"]:Tween({Size = UDim2.new(0, Width + 34, 0, TargetHeight + 28)}, KeybindTweenInfo)
                     Items["KeybindList"].Instance.Visible = true
                 end
             end
