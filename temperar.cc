@@ -1632,6 +1632,7 @@
 					position = dim2(0, main_window.items.main_holder.AbsolutePosition.X + main_window.items.main_holder.AbsoluteSize.X + 2, 0, main_window.items.main_holder.AbsolutePosition.Y),
 					image = "rbxassetid://115194686863276",
 				})
+				style.items.sgui.Enabled = false
 
 				local watermark = library:watermark({default = os.date('dalol.xyz |  - %b %d %Y - %H:%M:%S')})  
 
@@ -1804,7 +1805,8 @@
 					size = dim2(0, 300, 0, 325),
 					position = dim2(0, style.items.main_holder.AbsolutePosition.X, 0, style.items.main_holder.AbsolutePosition.Y + style.items.main_holder.AbsoluteSize.Y + 2),
 					image = "rbxassetid://77684377836328",
-				})  
+				})
+				holder.items.sgui.Enabled = false  
 				
 				local items = holder.items
 				
@@ -1819,7 +1821,8 @@
 					size = dim2(0, 529, 0, 445),
 					position = dim2(0, main_window.items.main_holder.AbsolutePosition.X - 531, 0, main_window.items.main_holder.AbsolutePosition.Y),
 					image = "rbxassetid://107070078834415",
-				})  
+				})
+				holder.items.sgui.Enabled = false  
 				
 				local items = holder.items
 
