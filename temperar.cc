@@ -1797,7 +1797,7 @@ local Library = {
                 Name = "Show in keybinds list",
                 Flag = Keybind.Flag .. "ShowInKeybindsList",
                 Parent = Items["KeybindWindow"],
-                Default = false,
+                Default = true,
                 Callback = function(Value)
                     if KeybindObject then 
                         KeybindObject:SetVis(Value)
@@ -1848,12 +1848,6 @@ local Library = {
     
                     if Data.Callback then 
                         Library:SafeCall(Data.Callback, Keybind.Toggled)
-                    end
-
-                    -- Auto show/hide in keybind list based on whether a real key is set
-                    if KeybindObject then
-                        local isRealKey = TextToDisplay ~= "none" and TextToDisplay ~= ""
-                        ShowInKeybindsList:SetValue(isRealKey)
                     end
 
                     Update()
