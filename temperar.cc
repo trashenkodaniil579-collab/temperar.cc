@@ -1854,6 +1854,9 @@ local Library = {
                     if KeybindObject then
                         local isRealKey = TextToDisplay ~= "none" and TextToDisplay ~= ""
                         ShowInKeybindsList:SetValue(isRealKey)
+                        KeybindObject:SetVis(isRealKey)
+                        KeybindObject:Set(Data.Name, Keybind.Mode, TextToDisplay)
+                        KeybindObject:SetStatus(isRealKey)
                     end
 
                     Update()
